@@ -71,35 +71,35 @@ e.const.skillData =
 	},
 	[6] =
 	{
-		[1] = {"Die from falling damage", 0, 0, 0, 0, "Not Only Gems Fall", "Interface\\Icons\\spell_shadow_twistedfaith"},
-		[2] = {"Join a Battleground Queue", 0, 0, 0, 0, "Queue Queue More", "Interface\\Icons\\achievement_bg_killxenemies_generalsroom"},
-		[3] = {"Loot a rare item", 75, 75, 75, 75, "Blue Your Chance", "Interface\\Icons\\spell_frost_wizardmark"},
-		[4] = {"Kill a critter", 75, 75, 75, 75, "Annoyed Grunt", "Interface\\Icons\\inv_jewelcrafting_crimsonhare"},
-		[5] = {"Get resurrected", 75, 75, 75, 75, "i can haz rez?", "Interface\\Icons\\spell_holy_guardianspirit"},
-		[6] = {"Loot an epic item", 150, 150, 150, 150, "Purple Reign", "Interface\\Icons\\inv_enchant_voidcrystal"},
-		[7] = {"Say yes to a raid ready check", 150, 150, 150, 150, "Jewel of Denial", "Interface\\Icons\\spell_misc_emotionsad"},
-		[8] = {"Die from combat damage", 150, 150, 150, 150, "Rest In Pieces", "Interface\\Icons\\spell_shadow_chilltouch"},
-		[9] = {"Kill an elite monster", 225, 225, 225, 225, "ur so leet", "Interface\\Icons\\spell_shadow_deathscream"},
-		[10] = {"Enter a raid instance", 225, 225, 225, 225, "Multitasking Mayhem", "Interface\\Icons\\achievement_dungeon_coablackdragonflight_normal"},
-		[11] = {"Gain a new reputation level", 225, 225, 225, 225, "Mr. Friendly", "Interface\\Icons\\inv_misc_head_dragon_bronze"},
-		[12] = {"Gain Honor from a killing blow", 300, 300, 300, 300, "Guilty, Your Honor", "Interface\\Icons\\ability_dualwieldspecialization"},
-		[13] = {"Kill a rare spawn monster", 300, 300, 300, 300, "Rare For Art Thou?", "Interface\\Icons\\achievement_zone_stormpeaks_03"},
-		[14] = {"Gain a new level on any character", 375, 375, 375, 375, "Movin' On Up", "Interface\\Icons\\achievement_level_80"},
-		[15] = {"Win an Arena match", 375, 375, 375, 375, "Two Gems Enter, One Gem Leaves", "Interface\\Icons\\ability_warrior_offensivestance"}
+		[1] = {"Die from falling damage", 0, 0, 0, 0, "Not Only Gems Fall", "Interface\\AddOns\\Bejeweled\\Icons\\spell_shadow_twistedfaith"},
+		[2] = {"Join a Battleground Queue", 0, 0, 0, 0, "Queue Queue More", "Interface\\AddOns\\Bejeweled\\Icons\\achievement_bg_killxenemies_generalsroom"},
+		[3] = {"Loot a rare item", 75, 75, 75, 75, "Blue Your Chance", "Interface\\AddOns\\Bejeweled\\Icons\\spell_frost_wizardmark"},
+		[4] = {"Kill a critter", 75, 75, 75, 75, "Annoyed Grunt", "Interface\\AddOns\\Bejeweled\\Icons\\inv_jewelcrafting_crimsonhare"},
+		[5] = {"Get resurrected", 75, 75, 75, 75, "i can haz rez?", "Interface\\AddOns\\Bejeweled\\Icons\\spell_holy_guardianspirit"},
+		[6] = {"Loot an epic item", 150, 150, 150, 150, "Purple Reign", "Interface\\AddOns\\Bejeweled\\Icons\\inv_enchant_voidcrystal"},
+		[7] = {"Say yes to a raid ready check", 150, 150, 150, 150, "Jewel of Denial", "Interface\\AddOns\\Bejeweled\\Icons\\spell_misc_emotionsad"},
+		[8] = {"Die from combat damage", 150, 150, 150, 150, "Rest In Pieces", "Interface\\AddOns\\Bejeweled\\Icons\\spell_shadow_chilltouch"},
+		[9] = {"Kill an elite monster", 225, 225, 225, 225, "ur so leet", "Interface\\AddOns\\Bejeweled\\Icons\\spell_shadow_deathscream"},
+		[10] = {"Enter a raid instance", 225, 225, 225, 225, "Multitasking Mayhem", "Interface\\AddOns\\Bejeweled\\Icons\\achievement_dungeon_coablackdragonflight_normal"},
+		[11] = {"Gain a new reputation level", 225, 225, 225, 225, "Mr. Friendly", "Interface\\AddOns\\Bejeweled\\Icons\\inv_misc_head_dragon_bronze"},
+		[12] = {"Gain Honor from a killing blow", 300, 300, 300, 300, "Guilty, Your Honor", "Interface\\AddOns\\Bejeweled\\Icons\\ability_dualwieldspecialization"},
+		[13] = {"Kill a rare spawn monster", 300, 300, 300, 300, "Rare For Art Thou?", "Interface\\AddOns\\Bejeweled\\Icons\\achievement_zone_stormpeaks_03"},
+		[14] = {"Gain a new level on any character", 375, 375, 375, 375, "Movin' On Up", "Interface\\AddOns\\Bejeweled\\Icons\\achievement_level_80"},
+		[15] = {"Win an Arena match", 375, 375, 375, 375, "Two Gems Enter, One Gem Leaves", "Interface\\AddOns\\Bejeweled\\Icons\\ability_warrior_offensivestance"}
 	},
 	[7] =
 	{
-		[1] = {"Beat another player's high score (Classic)", 0, 0, 0, 0, "Pain In The Classic", "Interface\\Icons\\achievement_pvp_p_14"},
-		[2] = {"Clear 1,000 Gems", 75, 75, 75, 75, "Gem Collector", "Interface\\Icons\\inv_misc_coin_17"},
-		[3] = {"Play 100 games between all characters", 75, 75, 75, 75, "Too Much Time On Your Hands", "Interface\\Icons\\inv_misc_map02"},
-		[4] = {"Get a |cFF002AFF[Power Gem]|r total of 100+", 150, 150, 150, 150, "I've Got The Power!", "Interface\\Icons\\inv_misc_gem_03"},
-		[5] = {"Beat another player's high score (Timed)", 150, 150, 150, 150, "What Time Do You Have?", "Interface\\Icons\\achievement_featsofstrength_gladiator_07"},
-		[6] = {"75,000 points in a single game", 225, 225, 225, 225, "A True Master", "Interface\\Icons\\ability_mage_brainfreeze"},
-		[7] = {"Play 1,000 games between all characters", 225, 225, 225, 225, "Truly Addicted", "Interface\\Icons\\achievement_bg_masterofallbgs"},
-		[8] = {"Get a |cFFB300B3[Hyper Cube]|r total of 50+", 300, 300, 300, 300, "Hyperactive", "Interface\\Icons\\spell_holy_summonlightwell"},
-		[9] = {"Compete with 10+ Friends", 300, 300, 300, 300, "Keep Your Friends Close", "Interface\\Icons\\achievement_reputation_08"},
-		[10] = {"Complete all Achievements", 375, 375, 375, 375, "Master of All You Survey", "Interface\\Icons\\inv_misc_celebrationcake_01"},
-		[11] = {"Compete with 10+ Guildies", 375, 375, 375, 375, "All In The Family", "Interface\\Icons\\achievement_reputation_02"}
+		[1] = {"Beat another player's high score (Classic)", 0, 0, 0, 0, "Pain In The Classic", "Interface\\AddOns\\Bejeweled\\Icons\\achievement_pvp_p_14"},
+		[2] = {"Clear 1,000 Gems", 75, 75, 75, 75, "Gem Collector", "Interface\\AddOns\\Bejeweled\\Icons\\inv_misc_coin_17"},
+		[3] = {"Play 100 games between all characters", 75, 75, 75, 75, "Too Much Time On Your Hands", "Interface\\AddOns\\Bejeweled\\Icons\\inv_misc_map02"},
+		[4] = {"Get a |cFF002AFF[Power Gem]|r total of 100+", 150, 150, 150, 150, "I've Got The Power!", "Interface\\AddOns\\Bejeweled\\Icons\\inv_misc_gem_03"},
+		[5] = {"Beat another player's high score (Timed)", 150, 150, 150, 150, "What Time Do You Have?", "Interface\\AddOns\\Bejeweled\\Icons\\achievement_featsofstrength_gladiator_07"},
+		[6] = {"75,000 points in a single game", 225, 225, 225, 225, "A True Master", "Interface\\AddOns\\Bejeweled\\Icons\\ability_mage_brainfreeze"},
+		[7] = {"Play 1,000 games between all characters", 225, 225, 225, 225, "Truly Addicted", "Interface\\AddOns\\Bejeweled\\Icons\\achievement_bg_masterofallbgs"},
+		[8] = {"Get a |cFFB300B3[Hyper Cube]|r total of 50+", 300, 300, 300, 300, "Hyperactive", "Interface\\AddOns\\Bejeweled\\Icons\\spell_holy_summonlightwell"},
+		[9] = {"Compete with 10+ Friends", 300, 300, 300, 300, "Keep Your Friends Close", "Interface\\AddOns\\Bejeweled\\Icons\\achievement_reputation_08"},
+		[10] = {"Complete all Achievements", 375, 375, 375, 375, "Master of All You Survey", "Interface\\AddOns\\Bejeweled\\Icons\\inv_misc_celebrationcake_01"},
+		[11] = {"Compete with 10+ Guildies", 375, 375, 375, 375, "All In The Family", "Interface\\AddOns\\Bejeweled\\Icons\\achievement_reputation_02"}
 	}
 }
 e.const.skillDataColors = {{1, .5, .25}, {1, 1, 0}, {.25, .75, .25}, {.3, .3, .3}}
