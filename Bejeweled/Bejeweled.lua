@@ -574,9 +574,10 @@ local function Tt(t)
 	else
 		local n = (t.score / t.timer.timeElapsed)
 		if (t.score > 0) then
-			e.levelText:SetFormattedText("%.2f", n)
+			
+			e.levelText:SetText(string.format("%.2f", n))
 		else
-			e.levelText:SetFormattedText("%.2f", 0)
+			e.levelText:SetText(string.format("%.2f", 0))
 		end
 		if not ((t.mode == k) and (e.flightOptionWindow.learning)) then
 			local n, e, o
@@ -597,7 +598,7 @@ local function Tt(t)
 				if (e < 10) then
 					e = "0" .. e
 				end
-				t.text:SetFormattedText("%d:%s", n, e)
+				t.text:SetText(string.format("%d:%s", n, e))
 				if (t.timer.timeLeft == t.timer.timeStart) then
 					t.bar:SetWidth(t:GetWidth() - 4)
 				else
@@ -619,7 +620,7 @@ local function Tt(t)
 			if (t.timer.timeLeft == -1) then
 				t.text:SetText("Timing")
 			else
-				t.text:SetFormattedText("%d:%s", n, e)
+				t.text:SetText(string.format("%d:%s", n, e))
 			end
 			t.bar:SetWidth(t:GetWidth() - 4)
 		end
@@ -932,7 +933,7 @@ local function _t(t)
 	else
 		local i = (l.score / r)
 		t.scoreCaption:SetText("Points per Second")
-		t.scoreValue:SetFormattedText("%.2f", i)
+		t.scoreValue:SetText(string.format("%.2f", i))
 		t.bragString =
 			"[Bejeweled Addon]: " ..
 			a ..
@@ -3500,9 +3501,9 @@ local function Ue()
 		e.levelText:SetText(t.level + 1)
 	else
 		if (math.fmod(t.level, 2) == 0) then
-			e.dataText:SetFormattedText("%d|cFF00FF00x", (t.level))
+			e.dataText:SetText(string.format("%d|cFF00FF00x", (t.level)))
 		else
-			e.dataText:SetFormattedText("%.1f|cFF00FF00x", (1 + t.level * .5))
+			e.dataText:SetText(string.format("%.1f|cFF00FF00x", (1 + t.level * .5)))
 		end
 	end
 	t.level = t.level + 1
@@ -4079,9 +4080,9 @@ local function nt(o, r)
 			o["timedName" .. t]:SetText(n)
 		end
 		if (t == 1) then
-			o["timedScore" .. t]:SetFormattedText("|cFF00FF00%.2f", l)
+			o["timedScore" .. t]:SetText(string.format("|cFF00FF00%.2f", l))
 		else
-			o["timedScore" .. t]:SetFormattedText("%.2f", l)
+			o["timedScore" .. t]:SetText(string.format("%.2f", l))
 		end
 	end
 end
@@ -4532,9 +4533,9 @@ function e.CreateSlider_OnValueChanged(e)
 		BejeweledProfile.settings[e.objectSetting] = e:GetValue()
 	end
 	if (e.usePercent) then
-		e.valueCaption:SetFormattedText(": %d%%", (e:GetValue() * 100))
+		e.valueCaption:SetText(string.format(": %d%%", (e:GetValue() * 100)))
 	else
-		e.valueCaption:SetFormattedText(": %d", e:GetValue())
+		e.valueCaption:SetText(string.format(": %d", e:GetValue()))
 	end
 	if (e.updateFunc) then
 		e:updateFunc()
@@ -4569,17 +4570,17 @@ function e:CreateSlider(a, l, s, h, n, t, o, d, r, i, S)
 	t:SetValueStep(r)
 	if (BejeweledProfile.settings[n]) then
 		if (i) then
-			t.valueCaption:SetFormattedText(": %d%%", (BejeweledProfile.settings[n] * 100))
+			t.valueCaption:SetText(string.format(": %d%%", (BejeweledProfile.settings[n] * 100)))
 		else
-			t.valueCaption:SetFormattedText(": %d", BejeweledProfile.settings[n])
+			t.valueCaption:SetText(string.format(": %d", BejeweledProfile.settings[n]))
 		end
 		t:SetValue(BejeweledProfile.settings[n])
 	else
 		t:SetValue(o)
 		if (i) then
-			t.valueCaption:SetFormattedText(": %d%%", (o * 100))
+			t.valueCaption:SetText(string.format(": %d%%", (o * 100)))
 		else
-			t.valueCaption:SetFormattedText(": %d", o)
+			t.valueCaption:SetText(string.format(": %d", o))
 		end
 	end
 	t:SetPoint("Topleft", a, l)
@@ -6767,7 +6768,7 @@ local function D()
 			t.timer.legJourney = 0
 			t.timer.learning = t.learning
 			t.timer:Show()
-			e.timedWindow.timeRemainingValue:SetFormattedText("%d min %d sec", e:SecondsConvert(t.flightTime))
+			e.timedWindow.timeRemainingValue:SetText(string.format("%d min %d sec", e:SecondsConvert(t.flightTime)))
 			if (e.timedWindow:IsVisible()) then
 				e.timedWindow:SetHeight(L - 30)
 				e.timedWindow.flightCheckbox:Show()
@@ -7666,11 +7667,7 @@ local function u()
 							e.skillBar.bar:SetWidth(1)
 						end
 					end
-					e.skillBar.text:SetFormattedText(
-						"%d / %d",
-						BejeweledProfile.skill.skillPoints,
-						(BejeweledProfile.skill.rank * 75)
-					)
+					e.skillBar.text:SetText(string.format("%d / %d",BejeweledProfile.skill.skillPoints,(BejeweledProfile.skill.rank * 75)))
 					e.featsOfSkillScreen.tab1Content:UpdateSkillScreen()
 					e.featsOfSkillScreen.tab4Content:UpdateSkillScreen()
 				end
@@ -7827,29 +7824,14 @@ local function u()
 	i.UpdateSkillScreen = function(n)
 		local t = BejeweledProfile.skill.rank
 		local S = BejeweledProfile.skill.skillPoints
-		n.title:SetFormattedText("Bejeweling Skill Rank: %s", e.const.skillDataRanks[t])
-		e.skillBar.text:SetFormattedText(
-			"%d / %d",
-			BejeweledProfile.skill.skillPoints,
-			(BejeweledProfile.skill.rank * 75)
-		)
+		n.title:SetText(string.format("Bejeweling Skill Rank: %s", e.const.skillDataRanks[t]))
+		e.skillBar.text:SetText(string.format("%d / %d",BejeweledProfile.skill.skillPoints,(BejeweledProfile.skill.rank * 75)))
 		e.skillBar.bar:SetWidth(
-			(e.skillBar:GetWidth() - 4) *
-				((BejeweledProfile.skill.skillPoints - ((BejeweledProfile.skill.rank - 1) * 75)) / 75) +
-				1
-		)
+			(e.skillBar:GetWidth() - 4) * ((BejeweledProfile.skill.skillPoints - ((BejeweledProfile.skill.rank - 1) * 75)) / 75) + 1)
 		e.skillBar.leftIcon:SetTexCoord(
-			((BejeweledProfile.skill.rank - 1) * 16 / 128),
-			(BejeweledProfile.skill.rank * 16 / 128),
-			0,
-			1
-		)
+			((BejeweledProfile.skill.rank - 1) * 16 / 128), (BejeweledProfile.skill.rank * 16 / 128), 0, 1)
 		e.skillBar.rightIcon:SetTexCoord(
-			(BejeweledProfile.skill.rank * 16 / 128),
-			((BejeweledProfile.skill.rank + 1) * 16 / 128),
-			0,
-			1
-		)
+			(BejeweledProfile.skill.rank * 16 / 128), ((BejeweledProfile.skill.rank + 1) * 16 / 128), 0, 1)
 		local t
 		local l = 1
 		local t, t, o, h, s
@@ -7934,7 +7916,7 @@ local function u()
 	i:Hide()
 	i:SetScript("OnShow", function(t)
 		t.scoreClassic:SetText(e:NumberWithCommas(BejeweledProfile.stats.classic.score))
-		t.scoreTimed:SetFormattedText("%.2f", BejeweledProfile.stats.timed.score)
+		t.scoreTimed:SetText(string.format("%.2f", BejeweledProfile.stats.timed.score))
 		t.highestLevel:SetText(BejeweledProfile.stats.classic.highestLevel)
 		t.mostMoves:SetText(BejeweledProfile.stats.timed.mostMoves)
 		t.largestCascade:SetText(BejeweledProfile.stats.largestCascade)
@@ -8364,7 +8346,7 @@ local function u()
 				a:SetPoint("Topleft", 14, 0)
 			end
 		end
-		r.title:SetFormattedText(r.title.caption, h, s, S)
+		r.title:SetText(string.format(r.title.caption, h, s, S))
 		e.featsOfSkillScreen.tab4Content.scrollHeight = d
 		getglobal("BejeweledAchievementList"):SetHeight(d)
 		if not (BejeweledData.firstSkillShow) and (r:IsVisible()) then
@@ -8717,39 +8699,17 @@ function e:Initialize_OptionsScreen()
 	if (BejeweledProfile.settings.keybinding) then
 		SetOverrideBindingClick(i, true, BejeweledProfile.settings.keybinding, "BejeweledShowHideButton")
 	end
-	e:CreateSlider(
-		50,
-		-a - 45,
-		250,
-		"Game Transparency",
-		"gameAlpha",
-		o,
-		.2,
-		1,
-		.005,
-		true,
+	e:CreateSlider(50, -a - 45, 250, "Game Transparency", "gameAlpha", o, .2, 1, .005, true,
 		function(t)
 			e.const.windowFadeIn.endAlpha = BejeweledProfile.settings.gameAlpha
 			e.const.windowFadeOut.startAlpha = BejeweledProfile.settings.gameAlpha
 			e.window:SetAlpha(t:GetValue())
-		end
-	)
-	e:CreateSlider(
-		50,
-		-a - 76,
-		250,
-		"Mouse-off Transparency",
-		"mouseoffAlpha",
-		o,
-		0,
-		1,
-		.005,
-		true,
+		end)
+	e:CreateSlider(50, -a - 76, 250, "Mouse-off Transparency", "mouseoffAlpha", o, 0, 1, .005, true,
 		function()
 			e.const.windowFadeIn.startAlpha = BejeweledProfile.settings.mouseoffAlpha
 			e.const.windowFadeOut.endAlpha = BejeweledProfile.settings.mouseoffAlpha
-		end
-	)
+		end)
 	local t = 100
 	e:CreateCaption(10, t + 4, "Sounds:", o, 12, 1, .85, .1)
 	local l = function(e)
@@ -8770,14 +8730,7 @@ function e:Initialize_OptionsScreen()
 	n = e:CreateCheckbox(250, -t, "Off", "disableSounds", 1, o, l, true)
 	n:SetHitRectInsets(0, -70, 0, 0)
 	t = t + 17
-	n =
-		e:CreateCheckbox(
-		10,
-		-t,
-		"Hide Minimap Icon",
-		"hideMinimap",
-		1,
-		o,
+	n = e:CreateCheckbox( 10, -t, "Hide Minimap Icon", "hideMinimap", 1, o,
 		function(t)
 			BejeweledProfile.settings[string.match(t:GetName(), "BejeweledCheckBox(.*)")] = t:GetChecked()
 			if not BejeweledProfile.settings.hideMinimap then
@@ -8785,8 +8738,7 @@ function e:Initialize_OptionsScreen()
 			else
 				e.minimap:Hide()
 			end
-		end
-	)
+		end)
 	n:SetHitRectInsets(0, -340, 0, 0)
 	t = t + 16
 	n = e:CreateCheckbox(10, -t, "Lock Window", "lockWindow", 1, o)
@@ -8810,14 +8762,7 @@ function e:Initialize_OptionsScreen()
 	n = e:CreateCheckbox(10, -t, "One score per person on High Score lists", "hideDuplicates", 1, o)
 	n:SetHitRectInsets(0, -340, 0, 0)
 	t = t + 16
-	n =
-		e:CreateCheckbox(
-		10,
-		-t,
-		"Disable Auto-Hint Arrows",
-		"disableHints",
-		1,
-		o,
+	n = e:CreateCheckbox(10, -t, "Disable Auto-Hint Arrows", "disableHints", 1, o,
 		function(t)
 			BejeweledProfile.settings[string.match(t:GetName(), "BejeweledCheckBox(.*)")] = t:GetChecked()
 			if not BejeweledProfile.settings.disableHints then
@@ -8830,8 +8775,7 @@ function e:Initialize_OptionsScreen()
 				e.wasShown = nil
 				e.oldAlpha = 0
 			end
-		end
-	)
+		end)
 	n:SetHitRectInsets(0, -340, 0, 0)
 	t = t + 16
 	n = e:CreateCheckbox(10, -t, "Show Flight Times on Flight Window Tooltips", "showFlightTooltips", 1, o)
