@@ -1,5 +1,6 @@
 # Bejewled
 This is for converting 3.3.5 Bejewled to 1.12.1 API.
+
 Credit to Xennma for contributing a number of initial changes to get it started.
 
 This addon is to play Bejewled, it can auto play upon Death, and when you Fly. It's very nice for those periods in the game where you have to wait and has built in achievements.
