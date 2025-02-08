@@ -1,4 +1,4 @@
-# Bejewled
+# Bejeweled
 This is for converting 3.3.5 Bejeweled to 1.12.1 API.
 
 Credit to Xennma for contributing a number of initial changes to get it started.
