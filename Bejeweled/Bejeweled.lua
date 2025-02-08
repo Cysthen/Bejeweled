@@ -280,9 +280,9 @@ local Xe = 12
 local A = 6
 local se = 4
 local je = 7
-local it = #FX_SHINE_ALPHA
+local it = getn(FX_SHINE_ALPHA)
 local ke = 8
-local Re = #FX_SHINE_ALPHA
+local Re = getn(FX_SHINE_ALPHA)
 local g = 9
 local mt = 40
 local te = 10
@@ -694,8 +694,8 @@ end
 local function X(n, l)
 	local t = 0
 	local o, e
-	local o = #n - 1
-	for i = 1, #n do
+	local o = getn(n) - 1
+	for i = 1, getn(n) do
 		e = j(n, i)
 		if (e >= 96) then
 			e = e - 96
@@ -706,7 +706,7 @@ local function X(n, l)
 		o = o - 1
 	end
 	if (l == true) then
-		t = t - d((70 ^ #n) / 2)
+		t = t - d((70 ^ getn(n)) / 2)
 	end
 	return t
 end
@@ -736,8 +736,8 @@ local function x(t, n, l)
 			break
 		end
 	end
-	if (#e < n) then
-		e = string.rep(P(96), (n - #e)) .. e
+	if (getn(e) < n) then
+		e = string.rep(P(96), (n - getn(e))) .. e
 	end
 	return e
 end
@@ -746,7 +746,7 @@ local function H(s, e)
 	local o = e or 0
 	local t = e or 0
 	local n, a, e, l, r
-	d = #s
+	d = getn(s)
 	for e = 1, d do
 		i = j(s, e)
 		if (mod(e, 2) == 0) then
@@ -768,7 +768,7 @@ local function P(e, t)
 	return x(1e5 + n * 1e4 + i * 1e3 + t * 100 + o * 10 + l, 3) .. e
 end
 local function fe(e, t)
-	if (R(e) ~= "string") or (#e < 4) then
+	if (R(e) ~= "string") or (getn(e) < 4) then
 		return
 	end
 	local r = G(e, 1, 3)
@@ -788,7 +788,7 @@ local function fe(e, t)
 end
 local function H(t)
 	local n, e = 0, 0
-	for n = 1, #t do
+	for n = 1, getn(t) do
 		e = e + j(t, n)
 	end
 	return e
@@ -808,7 +808,7 @@ local function j(S, ...)
 		n = fe(n, H(o))
 		r = true
 		if (n) then
-			if (#n > 3) then
+			if (getn(n) > 3) then
 				n = X(n)
 				l = 1e3
 				d = 100
@@ -1019,10 +1019,10 @@ local function M(l, s, S, f, m, a, c, h, u)
 		if (i >= 5) then
 			o = o + e.skillBar:CheckSkill(e.const.SKILLTYPE_COMBO, e.const.SKILL_COMBO5)
 		end
-		if (n.combo < #T) then
+		if (n.combo < getn(T)) then
 			t = T[i]
 		else
-			t = T[#T]
+			t = T[getn(T)]
 		end
 	end
 	if (l == 4) then
@@ -1969,7 +1969,7 @@ local function T(r)
 		end
 	end
 	local o = e.animator.animationStack
-	for n = 0, #o do
+	for n = 0, getn(o) do
 		if (n == 0) then
 			t = e.animator.hintObj
 		else
@@ -2023,12 +2023,12 @@ local function T(r)
 end
 function e:UpdateFlightTimes()
 	local t = e.flightOptionWindow
-	if (#t.pathArray > 0) then
+	if (getn(t.pathArray) > 0) then
 		local o = d(t.timer.legJourney + .75)
 		local n = B(t.pathArray, 1)
 		local i = B(t.pathArray, 1)
 		local l = B(t.pathArray, 1)
-		if (#t.pathArray > 0) then
+		if (getn(t.pathArray) > 0) then
 			o = o + 1.35
 		end
 		SetMapToCurrentZone()
@@ -2069,7 +2069,7 @@ function e:LoadAchievementEvents()
 		if n.gameMode and e.window:IsVisible() then
 			local l, e, n
 			e = 1
-			for l = 1, #t.eventList[o] do
+			for l = 1, getn(t.eventList[o]) do
 				n = t.eventList[o][e](i, o, ...)
 				if (n == true) then
 					B(i.eventList[o], e)
@@ -2077,7 +2077,7 @@ function e:LoadAchievementEvents()
 					e = e + 1
 				end
 			end
-			if #t.eventList[o] == 0 then
+			if getn(t.eventList[o]) == 0 then
 				t.eventList[o] = nil
 				i:UnregisterEvent(o)
 			end
@@ -2828,7 +2828,7 @@ local function j(l, s, r)
 		e.window.splash.firstGame = nil
 		e.window.splash:Hide()
 	end
-	for t = 1, #e.animator.animationStack do
+	for t = 1, getn(e.animator.animationStack) do
 		i = e.animator.animationStack[1]
 		if (i.fxType == ye) then
 			u(e.animator.bigStarQueue, i)
@@ -3159,7 +3159,7 @@ local function Me()
 				BejeweledProfile.settings.savedState[t][e] = 0
 			end
 		end
-		for e = 1, #BejeweledProfile.settings.savedState[a + 1] do
+		for e = 1, getn(BejeweledProfile.settings.savedState[a + 1]) do
 			BejeweledProfile.settings.savedState[a + 1][e] = 0
 		end
 		BejeweledProfile.settings.classicInProgress = nil
@@ -4731,10 +4731,10 @@ local function Le(i)
 		if (n.gameMode ~= c) or (n.level == 1) then
 			for n = 1, 200 do
 				if not Q() then
-					for e = 1, #i.newJewel do
+					for e = 1, getn(i.newJewel) do
 						i.newJewel[e].contents = 0
 					end
-					for e = 1, #i.newJewel do
+					for e = 1, getn(i.newJewel) do
 						de(i.newJewel[e].gridX, i.newJewel[e].gridY, true, true)
 					end
 				else
@@ -5073,8 +5073,8 @@ local function Se(l, w)
 		end
 	end
 	f = 1
-	if (#l.newJewel > 0) then
-		for e = 1, #l.newJewel do
+	if (getn(l.newJewel) > 0) then
+		for e = 1, getn(l.newJewel) do
 			B(l.newJewel, 1)
 		end
 	end
@@ -5086,7 +5086,7 @@ local function Se(l, w)
 		m = m + 1
 		l:HandleJewelFalling(l)
 	end
-	for Y = 1, #x do
+	for Y = 1, getn(x) do
 		t = x[f]
 		t.movedOnce = nil
 		if (t.fxType == De) then
@@ -5807,7 +5807,7 @@ local function V()
 		end
 		t.elapsed = 0
 		t.throttleCount = 0
-		if (#t.queue > 0) then
+		if (getn(t.queue) > 0) then
 			if (t.throttleCount < 20) then
 				local e, e, e, e
 				local i, o, e, n
@@ -5820,7 +5820,7 @@ local function V()
 						SendAddonMessage(xe, o, e, n)
 						t.throttleCount = t.throttleCount + 1
 					end
-					if (#t.queue == 0) then
+					if (getn(t.queue) == 0) then
 						break
 					end
 				end
@@ -6994,7 +6994,7 @@ local function y(t)
 	local S
 	local r = e.flightOptionWindow.pathArray
 	local t
-	for e = 1, #r do
+	for e = 1, getn(r) do
 		B(r, 1)
 	end
 	SetMapToCurrentZone()
@@ -7253,7 +7253,7 @@ local function B()
 					local l = string.lower(BejeweledProfile.settings.defaultPublish)
 					local n = i:GetParent()
 					n:refreshChannels(EnumerateServerChannels())
-					for i = 1, #n.channelNames do
+					for i = 1, getn(n.channelNames) do
 						table.wipe(t)
 						t.text = n.channelNames[i]
 						if (l == string.lower(t.text)) then
@@ -7294,7 +7294,7 @@ local function B()
 	t.refreshChannels = function(e, ...)
 		table.wipe(e.serverChannels)
 		local t
-		for t = 1, #(...) do
+		for t = 1, getn((...)) do
 			u(e.serverChannels, (select(t, ...)))
 		end
 		table.wipe(e.channelNames)
@@ -7302,7 +7302,7 @@ local function B()
 		for n = 1, 15 do
 			_, t = GetChannelName(n)
 			if (t) then
-				for n = 1, #e.serverChannels do
+				for n = 1, getn(e.serverChannels) do
 					if (string.find(t, e.serverChannels[n])) then
 						t = nil
 						break
@@ -7544,14 +7544,14 @@ local function u()
 							if not BejeweledProfile.skill["gainAchieve" .. e.const.SKILL_ACHIEVE6A] then
 								local t, t
 								local t = true
-								for e = 1, #o[e.const.SKILLTYPE_FUN] do
+								for e = 1, getn(o[e.const.SKILLTYPE_FUN]) do
 									if not BejeweledProfile.skill["gainFun" .. e] then
 										t = nil
 										break
 									end
 								end
 								if (t == true) then
-									for n = 1, #o[e.const.SKILLTYPE_ACHIEVEMENT] do
+									for n = 1, getn(o[e.const.SKILLTYPE_ACHIEVEMENT]) do
 										if (n ~= e.const.SKILL_ACHIEVE6A) then
 											if not BejeweledProfile.skill["gainAchieve" .. n] then
 												t = nil
@@ -7752,7 +7752,7 @@ local function u()
 		local l = e.featsOfSkillScreen.tab1Content.skillTextSize
 		if (i.opened) then
 			i.opened = nil
-			for e = 1, #a[n] do
+			for e = 1, getn(a[n]) do
 				o = t["section" .. n .. "Item" .. e]
 				o:SetHeight(.01)
 				o.text:Hide()
@@ -7768,7 +7768,7 @@ local function u()
 		else
 			i.opened = true
 			local e
-			for i = 1, #a[n] do
+			for i = 1, getn(a[n]) do
 				o = t["section" .. n .. "Item" .. i]
 				if (o.hasData) then
 					o:SetHeight(l + 1)
@@ -7812,7 +7812,7 @@ local function u()
 		i["section" .. n .. "Header"] = t
 		t.text = e:CreateCaption(27, 0, e.const.skillDataNames[n], t, h, 1, .82, 0)
 		c = t
-		for l = 1, #e.const.skillData[n] do
+		for l = 1, getn(e.const.skillData[n]) do
 			t = CreateFrame("Frame", "", o)
 			t:SetWidth(o:GetWidth())
 			t:SetHeight(h + 1)
@@ -7860,7 +7860,7 @@ local function u()
 			n["section" .. e .. "Header"].current = 1
 			n["section" .. e .. "Header"]:SetHeight(.01)
 			n["section" .. e .. "Header"]:Hide()
-			for t = 1, #a[e] do
+			for t = 1, getn(a[e]) do
 				o = n["section" .. e .. "Item" .. t]
 				o.hasData = nil
 				o.text:Hide()
@@ -7876,7 +7876,7 @@ local function u()
 			end
 			h = n["section" .. t .. "Header"].opened
 			foundFeat = nil
-			for i = #a[t], 1, -1 do
+			for i = getn(a[t]), 1, -1 do
 				if (a[t][i]) then
 					if (S >= a[t][i][2]) then
 						l = 1
@@ -7949,7 +7949,7 @@ local function u()
 		t.totalPower:SetText(BejeweledProfile.stats.totalPowerGems)
 		local e = 1
 		local n
-		for t = 2, #BejeweledProfile.stats.gemMatch do
+		for t = 2, getn(BejeweledProfile.stats.gemMatch) do
 			if (BejeweledProfile.stats.gemMatch[t] > BejeweledProfile.stats.gemMatch[e]) then
 				e = t
 			end
@@ -8252,7 +8252,7 @@ local function u()
 	i.skillTextSize = h
 	c = nil
 	for n = 6, 7 do
-		for a = 1, #e.const.skillData[n] do
+		for a = 1, getn(e.const.skillData[n]) do
 			t = CreateFrame("Frame", "", o)
 			t:SetWidth(387)
 			t:SetHeight(59)
@@ -8299,8 +8299,8 @@ local function u()
 		local h = 0
 		local s = 0
 		local S = 0
-		for e = #n, 6, -1 do
-			for n = #n[e], 1, -1 do
+		for e = getn(n), 6, -1 do
+			for n = getn(n[e]), 1, -1 do
 				t = r["section" .. e .. "Item" .. n]
 				t.hasData = nil
 				t.text:Hide()
@@ -8311,8 +8311,8 @@ local function u()
 				s = s + 1
 			end
 		end
-		for e = 6, #n do
-			for o = 1, #n[e] do
+		for e = 6, getn(n) do
+			for o = 1, getn(n[e]) do
 				if (n[e][o]) then
 					if (f >= n[e][o][2]) then
 						h = h + 1
@@ -9158,7 +9158,7 @@ local function k()
 		if (t) then
 			n.text:SetWidth(t[1])
 			n.text:SetHeight(t[2])
-			if (#t > 9) then
+			if (getn(t) > 9) then
 				n.text:SetTexCoord(t[3], t[4], t[5], t[6], t[7], t[8], t[9], t[10])
 				n.background:SetVertexColor(t[11], t[12], t[13])
 			else
