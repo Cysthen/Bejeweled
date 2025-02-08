@@ -1,7 +1,7 @@
-## Interface: 30300
-## Title: Bejeweled
+## Interface: 11200
+## Title: Bejeweled (Vanilla Port)
 ## Version: 1.1b
-## Notes: The popular game Bejeweled, now for World of Warcraft!
+## Notes: The popular game Bejeweled, now for World of Warcraft! Backported to 1.12
 ## Author: PopCap Games, Inc.
 ## X-ArcadePanel: getglobal("BejeweledWindow"):Show();
 ## X-ArcadePanelGraphic: interface\addons\bejeweled\images\bejeweled
